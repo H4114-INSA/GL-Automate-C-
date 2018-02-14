@@ -49,8 +49,20 @@ void Lexer::Avancer() {
    tampon = nullptr;
 }
 
-void Lexer::putSymbol(Symbole *s)
-{
-	
+void Lexer::putSymbol(Symbole *s) {
+   switch(*s) {
+      case PLUS:
+         flux = '+' + flux;
+           break;
+      case MULT:
+         flux = '*' + flux;
+           break;
+      case CLOSEPAR:
+         flux = ')' + flux;
+           break;
+      case OPENPAR:
+         flux = '(' + flux;
+           break;
+   }
 }
 
