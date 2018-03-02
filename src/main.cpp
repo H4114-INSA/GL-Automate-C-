@@ -11,7 +11,6 @@ int main(void) {
 
     Lexer l(chaine);
     Automate automate(chaine);
-    cout<< "Début analyse de la chaîne " << chaine << endl;
     automate.eval();
 
     return 0;

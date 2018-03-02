@@ -16,6 +16,7 @@ class Automate {
 		void decalage(Symbole * s, Etat * e);
 		void reduction(int n, Symbole * s);
 		int calcul( vector<Symbole * > symboleDepile);
+		int getResultat();
 		
 	protected : 
 		deque<Symbole * > symbolestack;

@@ -40,7 +40,7 @@ void Automate::reduction(int n, Symbole * s)
     int val = calcul(depile);
 
 	etatstack.back()->transition(*this, new Expr(val));
-    cout << "valeur de réduction : "<< val << endl;
+    resultat = val;
 }
 
 int Automate::calcul( vector<Symbole * > symboleDepile)
@@ -76,8 +76,11 @@ void Automate::eval()
     while(finTransition )
     {
         Symbole * s = lexer->Consulter();
-        //cout << "symbole en analyse " ;
-        //s->Affiche(); cout << endl;
         finTransition = etatstack.back()->transition(*this, s);
     }
+}
+
+int Automate::getResultat()
+{
+    return resultat;
 }
